@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ALC4Phase1</string>
+    <string name="HomeHeading">Welcome to ALC 4.0</string>
+    <string name="button_about">About ALC</string>
+    <string name="button_profile">My Profile</string>
+    <string name="name">Name:</string>
+    <string name="name_answer">Joseph Cole-showers</string>
+    <string name="track">Track:</string>
+    <string name="track_answer">Android</string>
+    <string name="country">Country:</string>
+    <string name="country_answer">Nigeria</string>
+    <string name="email">Email:</string>
+    <string name="email_answer">joseph.c.o216@gmail.com</string>
+    <string name="phone_number">Phone Number:</string>
+    <string name="phoneno_answer">08119195235</string>
+    <string name="slack_username">Slack Username:</string>
+</resources>
