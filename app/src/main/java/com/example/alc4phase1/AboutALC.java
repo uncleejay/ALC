@@ -11,36 +11,25 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 public class AboutALC extends AppCompatActivity {
+    private WebView mWebView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_alc);
 
-        WebView containerWebView =  findViewById(R.id.containerWebView);
-        containerWebView.setWebViewClient(new MyWebViewClient());
-        String url ="https://andela.com/alc/";
-        containerWebView.getSettings().setJavaScriptEnabled(true);
-        containerWebView.loadUrl(url);
+        mWebView = findViewById(R.id.containerWebView);
+        mWebView.setWebViewClient(new WebViewClient(){
+            @Override
+            public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+                handler.proceed();
+            }
+        });
 
-
-
+        mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.loadUrl("https://andela.com/alc/");
     }
 
 
-
-
-    private class MyWebViewClient extends WebViewClient {
-        @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            view.loadUrl(url);
-            return true;
-        }
-    }
-
-    @Override
-    public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError er){
-        handler.proceed();
-
-    }
 }
+
